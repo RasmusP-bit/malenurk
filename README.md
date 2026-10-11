@@ -8,21 +8,21 @@ Lihtsaim viis on avada `index.html` veebilehitsejas. Kui soovid kasutada lokaals
 
 ## Tehnoloogia ja põhifunktsioonid
 
-Programm on üks HTML-fail, milles on HTML, CSS ja JavaScript. Väliseid teeke, serverit, andmebaasi ega kontosid ei kasutata. Rakenduses on õppijavaade, seadistatav harjutusseanss, interaktiivne klõpsatav malelaud, ühekäiguliste lahenduste kontroll, järkjärgulised vihjed, tulemused, salasõnaga treeneri vaade ja õpetaja 5-palline tagasisidevorm.
+Programm on üks HTML-fail, milles on HTML, CSS ja JavaScript. Väliseid teeke, serverit, andmebaasi ega kontosid ei kasutata. Rakenduses on õppijavaade, seadistatav harjutusseanss, reegleid kontrolliv klõpsatav malelaud, rohelise/punase sihtruudu märgistus, järkjärgulised vihjed, tulemused, salasõnaga treeneri vaade ja õpetaja 5-palline tagasisidevorm.
 
 Treeneri vaate avamiseks tuleb sisestada salasõna `male2026`. Seda saab muuta `index.html` failis konstandis `COACH_PASSWORD`. Kuna rakendus on täielikult serverivaba, ei ole see salasõna päris turvameede: tehnikateadlik kasutaja võib selle lähtekoodist leida. See lahendus sobib õpilaste eest juhusliku ligipääsu peitmiseks; päris konfidentsiaalsuse jaoks oleks vaja serveripoolset autentimist.
 
 ## Ülesannete andmestruktuur ja kontroll
 
-Ülesanded asuvad `index.html` JavaScripti massiivis `puzzles`. Igal objektil on teema (`t`), tase (`l`), FEN-seis (`fen`), küsimus (`q`), lahendus UCI-kujul (`s`), vihjed (`h`) ja selgitus (`e`). Uue ülesande lisamiseks lisa massiivi sama väljadega objekt; kogu ülejäänud kasutajaliides täidab end automaatselt.
+Harjutuste algandmed asuvad `index.html` massiivis `guidedPuzzles` ja kasutajaliides kasutab neid massiivina `puzzles`. Igal objektil on teema (`t`), tase (`l`), FEN-seis (`fen`), küsimus (`q`), kontrolli tüüp (`mode`), vihjed (`h`) ja selgitus (`e`). Uue ülesande lisamiseks lisa sama väljadega objekt ning vali sobiv kontrolli tüüp: `capture`, `defend`, `escape`, `fork`, `pin`, `skewer` või `mate`. Kahvli puhul määra kaks `targets`-sihtmärki; läbistava rünnaku puhul `target`.
 
-Algversioon kasutab töökindluse hoidmiseks kontrollitavaid ühekäigulisi taktikaid: rakendus kontrollib valge malendi lähte- ja sihtruudu ning võrdleb käiku ülesande lahendusega. Mõnes „matt kahe käiguga“ ülesandes kontrollitakse esimest võtmekäiku ja kirjeldatakse järelmõtet; täielikku vastase kõigi vastuste otsingut siin ei tehta. See piirang on teadlikult dokumenteeritud, et mitte anda näiliselt korrektset mitmekäigulise mängu kontrolli.
+Harjutuste reeglimootor kontrollib malendi liikumismustrit, teel olevaid nuppe, enda nupu löömise keeldu, vastase kuninga löömise keeldu ning seda, et oma kuningas ei jääks või ei läheks tule alla. Ülesande vastus ei ole ainult üks etteantud ruudupaar: liikumise ülesanne lubab iga seadusliku käigu, löömise ülesanne seadusliku löögi, tule ülesanne tule andva käigu, tule alt pääsemise ülesanne iga käigu, mis eemaldab tule, ning mati ülesanne ainult tegeliku mati. Kaitsmise ülesanne võrdleb pärast käiku sihtnupu ründajate arvu.
 
-Ülesanded on jaotatud kolmeks sisemiseks tasemeks: keskmine (üks selge taktikaline idee), tugev (rohkem kandidaate või täpsem arvutus) ja väga tugev (varjatum idee). Praegune andmebaas sisaldab 26 näidet seitsmest teemast. Need on käsitsi konstrueeritud treeningseisud; enne õppetöös kasutamist peaks maleõpetaja need üle vaatama, eriti mattide ja mitmekäiguliste ülesannete puhul.
+Ülesanded on jaotatud kolmeks sisemiseks tasemeks: keskmine (üks selge taktikaline idee), tugev (rohkem täpsust nõudev käik) ja väga tugev (varjatum idee või kuningaohutus). Praegune õppijajada sisaldab 8 kontrollitavat taktikaülesannet: matt ühe käiguga, kahvel, sidumine, topeltrünnak, materialivõit, läbistav rünnak, rünnak ja kaitse ning kaitsev käik. Lihtsad malendite liikumise harjutused ei kuulu enam sellesse sihtrühma mõeldud põhijadasse.
 
 ## Pedagoogika, piirangud ja edasiarendus
 
-Vale käik ei paljasta kohe lahendust. Vihjed avanevad ükshaaval, lahenduse nägemine ja järgmise ülesande juurde liikumine on eraldi tegevused. Seansitulemusi hoitakse ainult brauseri aktiivses kasutuses. Lohistamist, musta poole ülesandeid, täielikku seaduslike käikude generaatorit, tulemuste eksporti ja püsivat salvestust praegune versioon ei sisalda. Edasi saab lisada korrektse malereeglite mootori (nt legalsete käikude kontroll koos matiseisuga), suurema kontrollitud ülesandekogu, eksportimise ning õpetaja koostatud komplektid.
+Vale käik ei paljasta kohe lahendust: seadusvastane sihtruut muutub punaseks ja annab selgituse; seaduslik, kuid ülesande ideed mitte lahendav käik muutub samuti punaseks. Õige sihtruut muutub roheliseks. Vihjed avanevad ükshaaval, „Proovi uuesti” puhastab märgistuse ning „Järgmine ülesanne” liigub alati edasi. Seansitulemusi hoitakse ainult brauseri aktiivses kasutuses. Lohistamist, musta poole ülesandeid, vangerduse ja möödaminnes löömise erireegleid ning püsivat salvestust praegune versioon ei sisalda. Edasi saab lisada suurema kontrollitud ülesandekogu, täielikuma erireeglite toe ja õpetaja koostatud komplektid.
 
 ## Codexi kasutamine
 
