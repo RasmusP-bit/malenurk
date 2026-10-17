@@ -18,7 +18,7 @@ Harjutuste algandmed asuvad `index.html` massiivis `guidedPuzzles` ja kasutajali
 
 Harjutuste reeglimootor kontrollib malendi liikumismustrit, teel olevaid nuppe, enda nupu löömise keeldu, vastase kuninga löömise keeldu ning seda, et oma kuningas ei jääks või ei läheks tule alla. Ülesande vastus ei ole ainult üks etteantud ruudupaar: liikumise ülesanne lubab iga seadusliku käigu, löömise ülesanne seadusliku löögi, tule ülesanne tule andva käigu, tule alt pääsemise ülesanne iga käigu, mis eemaldab tule, ning mati ülesanne ainult tegeliku mati. Kaitsmise ülesanne võrdleb pärast käiku sihtnupu ründajate arvu.
 
-Ülesanded on jaotatud kolmeks sisemiseks tasemeks: keskmine (üks selge taktikaline idee), tugev (rohkem täpsust nõudev käik) ja väga tugev (varjatum idee või kuningaohutus). Praegune õppijajada sisaldab 8 kontrollitavat taktikaülesannet: matt ühe käiguga, kahvel, sidumine, topeltrünnak, materialivõit, läbistav rünnak, rünnak ja kaitse ning kaitsev käik. Lihtsad malendite liikumise harjutused ei kuulu enam sellesse sihtrühma mõeldud põhijadasse.
+Ülesanded on jaotatud kolmeks sisemiseks tasemeks: keskmine (üks selge taktikaline idee), tugev (rohkem täpsust nõudev käik) ja väga tugev (varjatum idee või kuningaohutus). Praegune õppijajada sisaldab 8 kontrollitavat taktikaülesannet: matt ühe käiguga, kahvel, sidumine, topeltrünnak, materjalivõit, läbistav rünnak, rünnak ja kaitse ning kaitsev käik. Lihtsad malendite liikumise harjutused ei kuulu enam sellesse sihtrühma mõeldud põhijadasse.
 
 ## Pedagoogika, piirangud ja edasiarendus
 
